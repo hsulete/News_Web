@@ -4,55 +4,59 @@
 	<meta charset='utf-8'>
 	<title>最新消息</title>
 	{% load static %}
+	<link href="{% static "css/news_style.css" %}" rel="stylesheet" type="text/css" />
 </head>
 <body>
   	<div id="warp">
-		<div id="header">
-			<div class="toplogin">
+		<div id="header" align="right">
+			<span class="logo">
+				<img src="{% static "images/hsu.png" %}" width="180" height="40" alt="dreamweaver.com.tw" />
+			</span>
+			<span class="toplogin">
 				<a href="/login/" title="登入管理介面">
 				<img src="{% static "images/Lock.png" %}" alt="登入管理介面" width="32" height="32" /></a>
-			</div>
-			<div class="logo">
-				<img src="{% static "images/hsu.png" %}" width="180" height="40" alt="dreamweaver.com.tw" />
-			</div>
+			</span>
+
 		</div>
 		<div class="headings">
 		  <h2>新聞系統</h2>
 		</div>
-	</div>
-    <div class="contentbox">
-		<table width="100%">
-		<tr>
-		  <th align="left">分類</th>
-		  <th align="left">標題</th>
-		  <th align="left">時間</th>
-		  <th align="left">點閱</th>
-		</tr>
+
+    	<div class="contentbox">
+			<table width="100%" >
+				<tr>
+		  			<th align="center">分類</th>
+		  			<th align="center">標題</th>
+		  			<th align="center">時間</th>
+		  			<th align="center">點閱</th>
+				</tr>
 		{% for unit in news_units %}
-			<tr class="alt">
-			<td><div class="typeblock">【{{ unit.catego }}】</div></td>
-			<td><a href="/detail/{{unit.id}}/">{{ unit.title }}</a></td>
-			<td>{{ unit.pubtime }}</td>
-			<td>{{ unit.press }}</td>
-			</tr>
+				<tr class="alt">
+					<td align="center"><span class="typeblock">【{{ unit.catego }}】</span></td>
+					<td><a href="/detail/{{unit.id}}/">{{ unit.title }}</a></td>
+					<td align="center">{{ unit.pubtime }}</td>
+					<td align="center">{{ unit.press }}</td>
+				</tr>
 		{% empty %}
-			<div class="status warning">
-				<p><img src="{% static "images/icon_warning.png" %}" alt="Warning" /><span>注意</span> 目前新聞資料庫中沒有任何資料！</p>
-				<div>{{news_units}}</div>
-			</div>
+				<div class="status warning">
+					<p><img src="{% static "images/icon_warning.png" %}" alt="Warning" /><span>注意</span> 目前新聞資料庫中沒有任何資料！</p>
+				</div>
 		{% endfor %}
-		</table>
-		<div class="topfunction">
+			</table>
+
+			<div class="top_function" align="center" >
 		{% if currentpage > 1 %}
-			 <a href="/index/1/" title="上一頁">
-			<img src="{% static "images/previous.png" %}" alt="上一頁" width="64" height="24" /></a>
+			 	<a href="/news/1/" title="上一頁">
+				<img src="{% static "images/previous.png" %}" alt="上一頁" width="64" height="24" /></a>
 		{% endif %}
-		{% if currentpage < totpage %}
-			<a href="/index/2/" title="下一頁">
-			<img src="{% static "images/next.png" %}" alt="下一頁" width="64" height="24" /></a>
+		{% if currentpage < total_page %}
+				<a href="/news/2/" title="下一頁">
+				<img src="{% static "images/next.png" %}" alt="下一頁" width="64" height="24" /></a>
 		{% endif %}
+			</div>
+			<div id="footer">&copy; 徐立德 新聞練習網站 </div>
 		</div>
+
 	</div>
-    <div id="footer">&copy; 徐立德  新聞練習網站 </div>
 </body>
 </html>
