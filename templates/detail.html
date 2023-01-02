@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>詳細內容</title>
+	{% load static %}
+	<link href="{% static "css/news_style.css" %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  	<div id="warp">
+		<div id="header" align="right">
+			<span class="logo">
+				<img src="{% static "images/hsu.png" %}" width="180" height="40" alt="dreamweaver.com.tw" />
+			</span>
+			<span class="toplogin">
+				<a href="/login/" title="登入管理介面">
+				<img src="{% static "images/Lock.png" %}" alt="登入管理介面" width="32" height="32" /></a>
+			</span>
+
+		</div>
+		<div class="headings">
+		  <h2>新聞系統</h2>
+		</div>
+
+    	<div class="contentbox">
+			<table width="100%">
+			<tr>
+			  <th align="left"><span class="typeblock">{{category}}&nbsp;&nbsp;</span>&nbsp;&nbsp;{{title}}</th>
+			</tr>
+			<tr>
+			  <td><span class="newsinfo">
+				<img src="{% static "images/date.png" %}" alt="" width="16" height="16" />&nbsp;{{pubtime}}
+				&nbsp;<img src="{% static "images/user.png" %}" alt="" width="16" height="16" />&nbsp;{{nickname}}
+				<p>&nbsp;&nbsp;{{message}}</p>
+			  </td>
+			</tr>
+			</table>
+			<div class="top_function" align="center">
+				<a href="/news/1/" title="返回首頁">
+				<img src="{% static "images/home.png" %}" alt="返回首頁" width="86" height="32" /></a>
+			</div>
+			<div id="footer">&copy; 徐立德 新聞練習網站 </div>
+		</div>
+
+
+	</div>
+</body>
+</html>

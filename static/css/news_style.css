@@ -10,6 +10,9 @@ table{
 table td{
    padding:5px;
 }
+.top_function {
+
+}
 table td a{
     text-decoration: none;
 	font-size:18px;
@@ -71,4 +74,23 @@ width: 900px;
 
 .contentbox {
 	width:70%
+}
+
+.contentbox p{
+    background-color: #F0F0F0;
+}
+.small{
+    margin-right:40px;
+    font-weight:bold;
+
+}
+#login_warp {
+	height: 200px;
+	margin-top: 40px;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	width: 400px;
+	background:white;
+	border-radius: 25px;
 }

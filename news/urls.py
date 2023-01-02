@@ -19,6 +19,8 @@ from myapp import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("news", views.news),
+    path("news/", views.news),
     path('news/<str:pageindex>/', views.news),
+    path('detail/<int:detail_id>/', views.detail),
+    path('login/', views.login),
 ]
