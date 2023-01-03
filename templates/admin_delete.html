@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>刪除新聞介面</title>
+	{% load static %}
+	<link href="{% static "css/news_style.css" %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  	<div id="warp">
+		<div id="header" align="center">
+			<span class="logo" >
+				立德新聞網
+			</span>
+
+
+		</div>
+		<div class="headings">
+		  <h2>新聞系統 - 刪除新聞介面</h2>
+		</div>
+        <div class="contentbox">
+		<form action="/admin_delete/{{newsid}}/1/" id="form1" name="form1" method="post">
+		  {% csrf_token %}
+		  <table width="90%" align="center">
+			<tr>
+			  <th colspan="2" align="left"> 刪除新聞</th>
+			</tr>
+			<tr>
+			  <td width="20%"><strong>分類</strong></td>
+			  <td>{{type}}</td>
+			</tr>
+			<tr>
+			  <td><strong>標題</strong></td>
+			  <td>{{subject}}</td>
+			</tr>
+			<tr>
+			  <td><strong>編輯者</strong></td>
+			  <td>{{editor}}</td>
+			</tr>
+			<tr>
+			  <td><strong>內容</strong></td>
+			  <td>{{content}}</td>
+			</tr>
+			<tr>
+			  <td><strong>日期</strong></td>
+			  <td>{{date}}</td>
+			</tr>
+			<tr>
+			  <td><strong><font color="#FF0000">是否確定刪除？</font></strong></td>
+			  <td><input type="submit" name="button" id="button" value="確定" />
+			  <input type="button" name="button3" id="button3" value="回主頁面" onclick="window.location='/adminmain/'" />
+			</tr>
+		  </table>
+		</form>
+	</div>
+
+
+
+	</div>
+</body>
+</html>

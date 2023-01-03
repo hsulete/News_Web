@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset='utf-8'>
-	<title>最新消息</title>
+	<title>管理介面</title>
 	{% load static %}
 	<link href="{% static "css/news_style.css" %}" rel="stylesheet" type="text/css" />
 </head>
@@ -12,14 +12,18 @@
 			<span class="logo" >
 				立德新聞網
 			</span>
-			<span class="toplogin">
-				<a href="/login/" title="登入管理介面">
-				<img src="{% static "images/Lock.png" %}" alt="登入管理介面" width="32" height="32" /></a>
+			<span class="login_add">
+				<a href="/admin_add/" title="新增新聞"><img src="{% static "images/append.png" %}" alt="新增新聞" width="32" height="32" /></a>
 			</span>
+			<span class="login_out">
+				<a href="/news/" title=登出管理介面><img src="{% static "images/Lockoff.png" %}" alt="登出管理介面" width="32" height="32" /></a>
+			</span>
+
 
 		</div>
 		<div class="headings">
-		  <h2>新聞系統</h2>
+		  <h2>新聞系統 - 管理介面</h2>
+
 		</div>
 
     	<div class="contentbox">
@@ -28,14 +32,17 @@
 		  			<th align="center">分類</th>
 		  			<th align="center">標題</th>
 		  			<th align="center">時間</th>
-		  			<th align="center">點閱</th>
+		  			<th align="center">編輯</th>
 				</tr>
 		{% for unit in news_units %}
 				<tr class="alt">
 					<td align="center"><span class="typeblock">【{{ unit.catego }}】</span></td>
 					<td><a href="/detail/{{unit.id}}/">{{ unit.title }}</a></td>
 					<td align="center">{{ unit.pubtime }}</td>
-					<td align="center">{{ unit.press }}</td>
+					<td align="center">
+						<a href="/admin_edit/{{unit.id}}/" title="新聞編輯"> <img src="{% static "images/note_edit.png" %}"  width="16" height="16" /></a>
+						<a href="/admin_delete/{{unit.id}}/" title="新聞刪除"><img src="{% static "images/cross.png" %}" width="16" height="16" /></a>
+					</td>
 				</tr>
 		{% empty %}
 				<div class="status warning">
@@ -47,11 +54,11 @@
 			<div class="top_function" align="center" >
 				</br>
 		{% if currentpage > 1 %}
-			 	<a href="/news/1/" title="上一頁">
+			 	<a href="/adminmain/1/" title="上一頁">
 				<img src="{% static "images/previous.png" %}" alt="上一頁" width="64" height="24" /></a>
 		{% endif %}
 		{% if currentpage < total_page %}
-				<a href="/news/2/" title="下一頁">
+				<a href="/adminmain/2/" title="下一頁">
 				<img src="{% static "images/next.png" %}" alt="下一頁" width="64" height="24" /></a>
 		{% endif %}
 			</div>

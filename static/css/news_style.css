@@ -1,18 +1,37 @@
 table{
     padding:5px;
     margin-top:20px;
-    margin-bottom:20px;
+    margin-bottom:0px;
     margin-color:red;
     background:white;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
 }
+
 table td{
    padding:5px;
 }
-.top_function {
 
+.logo {
+    font-style:italic;
+    font-weight:bold;
+    font-size:50px;
+    margin-top:20px;
+    padding: 0 20px;
+	text-shadow: 5px 5px 5px #333;
+    width:80%;
+	height: 55px;
+	color: #CCC;
 }
+
+.toplogin{
+    position: absolute;
+    text-align:right;
+    top: 40px;
+    right : 0px;
+    width: 40px;
+    height: 19px;
+    text-align: center;
+}
+
 table td a{
     text-decoration: none;
 	font-size:18px;
@@ -70,6 +89,7 @@ body{
 }
 #header{
 width: 900px;
+position: relative;
 }
 
 .contentbox {
@@ -77,7 +97,7 @@ width: 900px;
 }
 
 .contentbox p{
-    background-color: #F0F0F0;
+    background-color:F0F0F0;
 }
 .small{
     margin-right:40px;
@@ -85,7 +105,7 @@ width: 900px;
 
 }
 #login_warp {
-	height: 200px;
+	height: 250px;
 	margin-top: 40px;
 	margin-right: auto;
 	margin-bottom: 0;
@@ -93,4 +113,29 @@ width: 900px;
 	width: 400px;
 	background:white;
 	border-radius: 25px;
+}
+.login_fail{
+    margin-top:35px;
+    font-size:20px;
+    color:red;
+    text-align:center;
+}
+.top_function{
+    background:#D0D0D0;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+}
+.login_out{
+    position: absolute;
+    width: 40px;
+    height: 19px;
+    right:10px;
+    top:50px;
+}
+.login_add{
+    position: absolute;
+    width: 40px;
+    height: 19px;
+    right:50px;
+    top:53px;
 }

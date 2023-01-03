@@ -7,22 +7,31 @@
 	<link href="{% static "css/news_style.css" %}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div id="login_warp">
-        <p align="center">
-            </br>
-            <label class="small" for="username">管理者帳號:</label>
-            <input name="username" type="text" id="username" required />
-        </p>
-        <p align="center">
-            <label class="small" for="username">管理者密碼:</label>
-            <input name="password" type="password" id="password" required />
+    <div id="warp">
+        <form action="." method="POST" id="loginform">
+        {% csrf_token %}
+            <div id="login_warp">
+                 <span class="logo">
+                立德新聞網
+                </span>
+                <p align="center">
+                    </br>
+                    <label class="small" for="username">管理者帳號:</label>
+                    <input name="username" type="text" id="username" required />
+                </p>
+                <p align="center">
+                    <label class="small" for="username">管理者密碼:</label>
+                    <input name="password" type="password" id="password" required />
 
-        </p>
-        </br>
-        <div class="action" align="right" style="margin-right:30px">
-            <input type="submit" class="butDef" value="登入" />
-            <input type="button" name="button1"  value="返回首頁" onclick="window.location='/news/'" />
-          </div>
+                </p>
+                </br>
+                <div class="action" align="right" style="margin-right:30px">
+                    <input type="submit" class="butDef" value="登入" />
+                    <input type="button" name="button1"  value="返回首頁" onclick="window.location='/news/'" />
+                </div>
+                <div class="login_fail">  {{messages}}</div>
+            </div>
+        </form>
     </div>
 
 </body>
